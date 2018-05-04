@@ -1,0 +1,22 @@
+{
+  "name": "amcosta88/credit-card",
+  "description": "fornece algumas utilidades para manipular cartões de crédito",
+  "type": "lib",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Alex Moreno",
+      "email": "alex.moreno.costa@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CreditCard\\": "src",
+      "CreditCard\\Test\\": "tests"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^7.1"
+  }
+}
