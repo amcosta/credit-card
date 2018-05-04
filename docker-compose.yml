@@ -1,0 +1,10 @@
+version: "3"
+services:
+    php:
+        image: nanoninja/php-fpm
+        container_name: php_credit_card
+        restart: always
+        user: www-data
+        working_dir: /var/www/html
+        volumes:
+            - ".:/var/www/html"
