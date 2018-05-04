@@ -39,6 +39,28 @@ class EloValidationTest extends TestCase
         ];
     }
 
+    /**
+     * @dataProvider providerTestInvalidCardNumbers
+     * @param $cardNumber
+     * @param $cvv
+     */
+    public function testInvalidCardNumbers($cardNumber, $cvv)
+    {
+        $card = $this->mockCard($cardNumber, $cvv);
+
+        $validation = new EloValidation();
+
+        $this->assertEquals('elo', $validation->getBrand());
+        $this->assertFalse($validation->validate($card));
+    }
+
+    public function providerTestInvalidCardNumbers()
+    {
+        return [
+            ['340866736123764', '4467']
+        ];
+    }
+
     private function mockCard($cardNumber, $cvv)
     {
         $card = $this->createMock(CardInterface::class);
